@@ -48,13 +48,16 @@ class InstagramParser:
 			url = None
 			likes = None
 			text = None
+			comments = None
 			if self.check_if_key_exist(['images', 'standard_resolution', 'url'], data):
 				url = data['images']['standard_resolution']['url']
+			if self.check_if_key_exist(['comments'], data):
+				comments = data['comments']
 			if self.check_if_key_exist(['likes'], data):
 				likes = data['likes']
 			if self.check_if_key_exist(['caption', 'text'], data):
 				text = data['caption']['text']
-			self.array_likes.append(InstagramPosts(url=url, likes=likes, text=text))
+			self.array_likes.append(InstagramPosts(url=url, likes=likes, text=text, comments=comments))
 
 		"""
 		Filter over Data  

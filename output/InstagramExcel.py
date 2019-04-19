@@ -7,10 +7,11 @@ class InstagramExcel:
 	"""
 
     def __init__(self):
-        self.excel_file_name = 'output.xlsx'
+        self.excel_file_name = 'Instagram.xlsx'
         self.path = '..\\SocialMediaAnalyzer\\output\\'
 
     def save_to_excel(self, array_likes):
+        print('this is likes', array_likes)
         workbook = xlsxwriter.Workbook(self.path + self.excel_file_name)
         worksheet = workbook.add_worksheet()
         for post_object in array_likes:
